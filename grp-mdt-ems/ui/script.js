@@ -592,7 +592,7 @@ function WarrantTimer() {
 
 WarrantTimer()
 
-function teste(){
+function login(){
   if (
   $("#login input[type='text']").val()=="ems"&&
   $("#login input[type='password']").val()=="pillbox"){
@@ -603,5 +603,15 @@ function teste(){
       $("#login p").html("")
     },3500)
   }
+}
 
+
+window.onload = function () {
+    const pieces = document.getElementById('human-body').getElementsByTagName('svg');
+    for (_piece of pieces) {
+        _piece.onclick = function(t) {
+            if (t.target.getAttribute('data-position') != null) document.getElementById('data').innerHTML = t.target.getAttribute('data-position');
+            if (t.target.parentElement.getAttribute('data-position') != null) document.getElementById('data').innerHTML = t.target.parentElement.getAttribute('data-position');
+        }
+    }
 }
